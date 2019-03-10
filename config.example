@@ -1,0 +1,8 @@
+
+# Replace with your Cloudflare key/email
+export CLOUDFLARE_AUTH_KEY=YOUR_API_KEY_HERE
+export CLOUDFLARE_AUTH_EMAIL=YOUR_CLOUDFLARE_EMAIL
+
+# Not required for deployments
+export CLOUDFLARE_ACCOUNT_ID=YOUR_ACCOUNT_ID_HERE
+export CLOUDFLARE_ZONE_ID=YOUR_ZONE_ID_HERE

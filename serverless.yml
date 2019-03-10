@@ -1,0 +1,21 @@
+service:
+    name: tome-of-many-spells
+
+provider:
+  name: cloudflare
+  config:
+    accountId: 680c61cf5c9f4de307018e1db8225ceb
+    zoneId: a65c9c8e3ad0ae9f6416bcf2828e2641
+
+plugins:
+  - serverless-cloudflare-workers
+
+functions:
+  main:
+    name: main
+    webpack: true
+    script: src/main  # maps to main.js
+    events:
+      - http:
+          url: tome-of-many-spells.vaultofheroes.com/*
+          method: GET
