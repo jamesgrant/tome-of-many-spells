@@ -1,6 +1,5 @@
-import isNumeric from '../../helpers/isNumeric'
+import isNumeric from '@helpers/isNumeric'
 
-// TODO: Move this to configuration.
 const apiUrl = 'http://dnd5eapi.co/api'
 
 /**

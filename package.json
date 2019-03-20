@@ -4,6 +4,7 @@
   "description": "Cloudflare serverless deployment for self-serve customers",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "cloudflare",

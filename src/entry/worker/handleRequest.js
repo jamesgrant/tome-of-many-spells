@@ -1,6 +1,6 @@
-import extractQueryParams from './helpers/extractQueryParams'
-import getClassSpells from './services/dnd5eapi/getClassSpells'
-// import getSpell from './services/dnd5eapi/getSpell'
+import extractQueryParams from '@helpers/extractQueryParams'
+import getClassSpells from '@services/dnd5eapi/getClassSpells'
+// import getSpell from '@services/dnd5eapi/getSpell'
 
 /**
  * Fetch and log a request

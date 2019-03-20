@@ -1,5 +1,5 @@
-import handleRequest from './handleRequest'
-import handleError from './handleError'
+import handleRequest from './worker/handleRequest'
+import handleError from './worker/handleError'
 
 // Listen for requests.
 addEventListener('fetch', event => {
