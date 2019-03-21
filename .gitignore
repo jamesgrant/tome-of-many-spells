@@ -1,4 +1,7 @@
+# Transient directories
 node_modules/
 .serverless
 dist
-config
+
+# Env specific files
+config.js

@@ -5,13 +5,19 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "predeploy": "npm run build",
+    "deploy": "node scripts/deploy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "cloudflare",
   "license": "MIT",
   "devDependencies": {
+    "serverless": "^1.39.1",
     "serverless-cloudflare-workers": "1.0.5",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.425.0"
   }
 }

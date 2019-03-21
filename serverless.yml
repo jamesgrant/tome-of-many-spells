@@ -12,9 +12,8 @@ plugins:
 
 functions:
   main:
-    name: main
-    webpack: true
-    script: src/main  # maps to main.js
+    name: worker
+    script: dist/worker  # maps to main.js
     events:
       - http:
           url: tome-of-many-spells.vaultofheroes.com/*

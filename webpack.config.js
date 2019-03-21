@@ -10,10 +10,15 @@ module.exports = {
     },
   },
   entry: {
+    front: './src/entry/front.js',
     worker: './src/entry/worker.js',
   },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  performance: {
+    hints: 'error',
+    maxAssetSize: 64000,
   }
 };
