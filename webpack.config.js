@@ -5,6 +5,7 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
       '@helpers': path.resolve(__dirname, 'src/helpers'),
       '@services': path.resolve(__dirname, 'src/services'),
     },
@@ -17,8 +18,19 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ]
+  },
   performance: {
-    hints: 'error',
-    maxAssetSize: 64000,
+    hints: 'warning',
+    maxAssetSize: 128 * 1024,
   }
 };

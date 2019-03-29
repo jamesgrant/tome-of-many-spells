@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Cloudflare serverless deployment for self-serve customers",
   "main": "index.js",
+  "sideEffects": false,
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "predeploy": "npm run build",
@@ -12,6 +13,12 @@
   "author": "cloudflare",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "serverless": "^1.39.1",
     "serverless-cloudflare-workers": "1.0.5",
     "webpack": "^4.29.6",
