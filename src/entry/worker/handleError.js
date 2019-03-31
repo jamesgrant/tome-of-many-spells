@@ -4,6 +4,7 @@
  * @param {Request} request
  */
 async function handleError(error, request) {
+  /*
   const logApiToken = 'd2406042-d6d5-40c5-a523-ec5f46c22c23'
   const logApiUrl = `http://logs-01.loggly.com/inputs/${logApiToken}/tag/http/`
 
@@ -22,6 +23,7 @@ async function handleError(error, request) {
   }
   
   await fetch(logApiUrl, fetchOpts)
+  */
 
   // Show error message to client
   const response = new Response('<p>Sorry, something went wrong</p>', {

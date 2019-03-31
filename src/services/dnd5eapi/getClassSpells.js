@@ -19,4 +19,4 @@ async function getClassSpells(className, level = null) {
     .catch(err => console.log(err))
 }
 
-export default getClassSpells
+export default getClassSpells;
