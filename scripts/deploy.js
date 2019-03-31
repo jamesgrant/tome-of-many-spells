@@ -23,6 +23,10 @@ const pushToBucket = () => {
     Bucket: config.aws.bucket,
     Key: path.basename(file),
     Body: fileStream,
+    // Metadata
+    ACL: 'public-read',
+    ContentType: 'application/javascript',
+    ContentDisposition: 'inline',
   };
   
   s3.upload(uploadParams, (error, data) => {
