@@ -43,6 +43,11 @@ p:first-child {
   .app-spell__title {
     font-family: 'Libre Baskerville', serif;
   }
+  .app-spell__link {
+    display: inline-block;
+    height: 0.75em;
+    margin-left: 0.5em;
+  }
   .app-spell__name {}
   .app-spell__meta {}
   .app-spell__level {}
