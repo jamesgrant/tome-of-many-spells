@@ -10,7 +10,7 @@ const apiUrl = 'http://dnd5eapi.co/api'
  * @returns {object}
  */
 async function getClassSpells(className, level = null) {
-  const endpoint = Number.isInteger(level)
+  const endpoint = level !== null
     ? `${apiUrl}/spells/${className}/level/${level}`
     : `${apiUrl}/spells/${className}`
 

@@ -5,6 +5,7 @@ function indexHandler(request) {
     <html>
     <head>
       <link rel="stylesheet" href="/assets/app.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat">
     </head>
     <body>
       <div id="app-container"></div>

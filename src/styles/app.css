@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+h1:first-child, 
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child,
+p:first-child {
+  margin-top: 0;
+}
+
+#app-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.app-header {}
+.app-header__title {
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+}
+
+.app-actions {
+  margin-bottom: 2em;
+}
+  .app-actions__class,
+  .app-actions__spell-level {
+    margin-right: 1em;
+  }
+
+.app-spell {
+  margin-bottom: 2em;
+}
+  .app-spell__title {
+    font-family: 'Libre Baskerville', serif;
+  }
+  .app-spell__name {}
+  .app-spell__meta {}
+  .app-spell__level {}
+  .app-spell__school {}
+
+  .app-spell__detail {
+    margin-bottom: 2em;
+  }
+
+  .app-spell__classes,
+  .app-spell__page-ref,
+  .app-spell__components,
+  .app-spell__range,
+  .app-spell__casting-time,
+  .app-spell__duration,
+  .app-spell__concentration {
+    display: block;
+  }
+
+  .app-spell__classes {
+    margin-bottom: 1em;
+  }
+
+  .app-spell__page-ref {}
+  .app-spell__components {}
+  .app-spell__range {}
+  .app-spell__casting-time {}
+  .app-spell__duration {}
+  .app-spell__concentration {}
+
+  .app-spell__description {}
+  

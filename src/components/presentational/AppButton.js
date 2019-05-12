@@ -1,9 +1,9 @@
 import React from 'react';
 
-const AppButton = ({label, onClick}) => {
+const AppButton = ({children, disabled, onClick}) => {
   return (
-    <button onClick={typeof onClick === 'function' ? onClick : () => {}}>
-      {label}
+    <button disabled={disabled} onClick={typeof onClick === 'function' ? onClick : () => {}}>
+      { children }
     </button>
   );
 };

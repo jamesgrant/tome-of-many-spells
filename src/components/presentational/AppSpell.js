@@ -21,7 +21,8 @@ class AppSpell extends Component {
         <div className="app-spell__title">
           <h2 className="app-spell__name">{ name }</h2>
           <div className="app-spell__meta">
-            <span className="app-spell__level">{ `Level ${level},` }</span>
+            <span className="app-spell__level">{ `Level ${level}` }</span>
+            { ', ' }
             <span className="app-spell__school">
               <a href={school.url}>{ school.name }</a>
             </span>
@@ -30,12 +31,12 @@ class AppSpell extends Component {
         
         <div className="app-spell__detail">
           <span className="app-spell__classes">{ classes.map(spellClass => spellClass.name).join(', ') }</span>
-          <span className="app-spell__page-ref">{ page }</span>
+          <span className="app-spell__page-ref">{ `See ${page.toUpperCase()}` }</span>
           <span className="app-spell__components">{ `Components: ${components.join(', ')}` }</span>
           <span className="app-spell__range">{ `Range: ${range}` }</span>
           <span className="app-spell__casting-time">{ `Casting time: ${castingTime}` }</span>
           <span className="app-spell__duration">{ `Duration: ${duration}` }</span>
-          <span className="app-spell__concentation">{ `concentration: ${concentration}` }</span>
+          <span className="app-spell__concentation">{ `Concentration: ${concentration}` }</span>
         </div>
 
         <div className="app-spell__description">
