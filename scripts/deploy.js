@@ -7,7 +7,7 @@ const { exec } = require('child_process');
 /**
  * Push assets to an AWS S3 (or compatible) bucket.
  */
-const pushToBucket = () => {
+const pushToBucket = (relPath, contentType) => {
   const s3 = new aws.S3({
     accessKeyId: config.aws.accessKeyId,
     secretAccessKey: config.aws.secretAccessKey,
@@ -15,7 +15,7 @@ const pushToBucket = () => {
     endpoint: config.aws.endpoint,
   });
   
-  const file = path.resolve(__dirname, '../dist/front.js');
+  const file = path.resolve(__dirname, relPath);
   const fileStream = fs.createReadStream(file);
   fileStream.on('error', (error) => console.log('File Error', error));
   
@@ -25,7 +25,7 @@ const pushToBucket = () => {
     Body: fileStream,
     // Metadata
     ACL: 'public-read',
-    ContentType: 'application/javascript',
+    ContentType: contentType,
     ContentDisposition: 'inline',
   };
   
@@ -33,9 +33,9 @@ const pushToBucket = () => {
     if (error) {
       throw error;
     } else if (data) {
-      console.log('Upload Success', data.Location);
+      console.log(`Upload Success: "${data.Location}" with mime-type: "${contentType}"`);
     } else {
-      console.log('wtf');
+      console.log(`Failed to upload asset "${relPath}"`);
     }
   });
 };
@@ -69,5 +69,6 @@ const deploy = () => {
   });
 };
 
-pushToBucket();
+pushToBucket('../dist/front.js', 'application/javascript');
+pushToBucket('../src/styles/app.css', 'text/css');
 deploy();

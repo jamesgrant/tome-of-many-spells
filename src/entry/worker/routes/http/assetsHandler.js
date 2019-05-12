@@ -7,9 +7,23 @@ async function assetsHandler(request) {
   const body = await fetch(bucketUrl + bucketPath)
     .then(response => response.text())
     .catch(error => console.log(error.message));
+    
+  const parts = requestUrl.pathname.split('.');
+  const extension = parts[parts.length - 1];
+  let contentType = '';
+  switch (extension) {
+    case 'js':
+      contentType = 'application/javascript';
+      break;
+    case 'css':
+      contentType = 'text/css';
+      break;
+    default:
+      contentType = 'text/plain';
+  }
   
   const opts = {
-    headers: { 'Content-Type': 'application/javascript; charset=utf-8' }
+    headers: { 'Content-Type': `${contentType}; charset=utf-8` }
   };
   
   return new Response(body || '// There was an error', opts);
