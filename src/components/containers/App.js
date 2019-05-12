@@ -14,14 +14,13 @@ class App extends Component {
     this.state = Object.assign({}, initialState);
   }
   
-  fetchSpell = (event) => {
+  fetchSpell = () => (event) => {
     event.preventDefault();
     
     const onSuccess = (spell) => {
-      this.setState({
-        ...this.state,
+      this.setState(state => ({
         spell,
-      });
+      }));
     }
     
     const onError = (errors) => {
@@ -43,7 +42,7 @@ class App extends Component {
       {this.renderSpell()}
       
       <div class="container--butttons">
-        <AppButton label="Generate" onClick={this.fetchSpell}></AppButton>
+        <AppButton label="Generate" onClick={this.fetchSpell()}></AppButton>
       </div>
     </Fragment>;
   }
